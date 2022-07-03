@@ -1,4 +1,5 @@
 const icon = document.getElementsByTagName('i')[0];
+const form = document.getElementsByTagName("form")[0];
 
 icon.addEventListener('click', function () {
     //select password input
@@ -10,4 +11,9 @@ icon.addEventListener('click', function () {
     pswInput.setAttribute("type", (currentType == "text"? "password": "text"));
     this.classList.remove(currentClass);
     this.classList.add(newClass);
+})
+
+// prevent form submit
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
 })
